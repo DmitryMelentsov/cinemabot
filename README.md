@@ -60,8 +60,8 @@
 ## Технологии
 
 - Python 3.10+
-- [Quart](https://pgjones.gitlab.io/quart/)
-- [Quart-Auth](https://quart-auth.readthedocs.io/)
+- Quart
+- Quart-Auth
 - Async SQLite (через `aiosqlite`)
 - Telegram Login авторизация (HMAC проверка)
 - Bootstrap (в шаблонах)
