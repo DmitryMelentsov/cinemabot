@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}История запросов{% endblock %}
+{% block content %}
+  <h2>История поиска</h2>
+  {% if history %}
+    <ul class="list-group">
+      {% for film in history %}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          {{ film.name }} ({{ film.year }})
+          <a href="{{ url_for('add_watch_later', name=film.name, year=film.year) }}"
+             class="btn btn-sm btn-outline-warning">Смотреть позже</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <div class="alert alert-info">История пуста.</div>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Вход{% endblock %}
+{% block content %}
+<h2 class="text-center">Вход через Telegram</h2>
+<div class="d-flex justify-content-center">
+    <script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-login="HW3_test_MovieBot"
+            data-size="large" data-userpic="false" data-auth-url="{{ DOMAIN }}/auth" ></script>
+</div>
+{% endblock %}

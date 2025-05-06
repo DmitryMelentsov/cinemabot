@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Поиск фильмов{% endblock %}
+{% block content %}
+  <h2 class="mb-4">Найти фильм</h2>
+  <form method="POST" class="input-group mb-3">
+    <input type="text" name="film_name" class="form-control" placeholder="Введите название фильма" required>
+    <button type="submit" class="btn btn-primary">Поиск</button>
+  </form>
+{% endblock %}

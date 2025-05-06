@@ -1,0 +1,37 @@
+
+{% extends "base.html" %}
+
+{% block title %}
+  Результаты поиска
+{% endblock %}
+
+{% block content %}
+  <h2>Результаты поиска</h2>
+
+  {% if film %}
+    <div class="row mb-3">
+      <div class="col-md-4">
+        <img src="{{ film.poster }}" alt="Постер" class="img-fluid rounded">
+      </div>
+      <div class="col-md-8">
+        <h3>{{ film.name }} ({{ film.year }})</h3>
+        <p>{{ film.description or "Описание отсутствует." }}</p>
+        <div class="mb-2">
+          {% if lordfilm %}
+            <a href="{{ lordfilm }}" target="_blank" class="btn btn-outline-success me-2">LordFilm</a>
+          {% endif %}
+          {% if zona %}
+            <a href="{{ zona }}" target="_blank" class="btn btn-outline-info">Zona</a>
+          {% endif %}
+          {% if not lordfilm and not zona %}
+            <span class="text-muted">Ссылки не найдены.</span>
+          {% endif %}
+        </div>
+        <a href="{{ url_for('add_watch_later', name=film.name, year=film.year) }}"
+           class="btn btn-warning">Добавить в "Смотреть позже"</a>
+      </div>
+    </div>
+  {% else %}
+    <div class="alert alert-warning">Фильм не найден.</div>
+  {% endif %}
+{% endblock %}
